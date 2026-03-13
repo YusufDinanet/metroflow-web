@@ -32,14 +32,14 @@
             width: 100%;
             padding: 50px 40px;
             border-radius: 48px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
             text-align: center;
             border: 1px solid rgba(255,255,255,0.1);
         }
         .badge-live {
             display: inline-flex;
             align-items: center;
-            background: rgba(52, 199, 89, 0.2);
+            background: rgba(52, 199, 89, 0.15);
             color: #34C759;
             padding: 6px 16px;
             border-radius: 20px;
@@ -47,6 +47,12 @@
             font-weight: 700;
             margin-bottom: 25px;
             border: 1px solid rgba(52, 199, 89, 0.3);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         .badge-dot {
             height: 8px;
@@ -58,7 +64,7 @@
             box-shadow: 0 0 8px #34C759;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin: 0;
             letter-spacing: -2px;
             font-weight: 800;
@@ -73,17 +79,17 @@
             margin: 15px 0 35px 0;
         }
         
-        /* Video Tanıtım - iPhone Çerçevesi Hissi */
         .video-wrapper {
             position: relative;
             width: 100%;
             border-radius: 32px;
-            padding: 8px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            padding: 6px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
             margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
         .video-container {
-            border-radius: 24px;
+            border-radius: 26px;
             overflow: hidden;
             background: #000;
             line-height: 0;
@@ -97,12 +103,13 @@
         .app-store-btn {
             display: inline-block;
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
         }
         .app-store-btn:hover {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
         .app-store-btn img {
-            height: 60px;
+            height: 62px;
         }
         
         .footer-nav {
@@ -112,25 +119,31 @@
             gap: 15px;
         }
         .privacy-link {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             text-decoration: none;
-            padding: 8px 20px;
-            border-radius: 12px;
+            padding: 10px 20px;
+            border-radius: 14px;
             background: rgba(255, 255, 255, 0.05);
             transition: all 0.2s ease;
             display: inline-block;
             align-self: center;
+            border: 1px solid rgba(255,255,255,0.05);
         }
         .privacy-link:hover {
             background: rgba(255, 255, 255, 0.1);
             color: white;
+            border-color: rgba(255,255,255,0.1);
         }
         .email-link {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        .email-link:hover {
+            opacity: 1;
         }
     </style>
 </head>
@@ -142,12 +155,13 @@
         </div>
         
         <h1>MetroFlow</h1>
-        <p class="subtitle">İstanbul metrosunu cebinizden yönetin. Anlık sefer verileri ve kusursuz rota deneyimi.</p>
+        <p class="subtitle">İstanbul metrosunu cebinizden yönetin. Anlık sefer verileri ve kusursuz rota deneyimi şimdi cebinizde.</p>
 
         <div class="video-wrapper">
             <div class="video-container">
-                <video autoplay loop muted playsinline>
-                    <source src="MetroFlow.mp4" type="video/mp4">
+                <video autoplay loop muted playsinline webkit-playsinline preload="auto">
+                    <source src="promo.mp4" type="video/mp4">
+                    Tarayıcınız video oynatmayı desteklemiyor.
                 </video>
             </div>
         </div>
@@ -158,7 +172,7 @@
 
         <div class="footer-nav">
             <a href="mailto:destek@metroflow.ist" class="email-link">destek@metroflow.ist</a>
-            <a href="privacy.html" class="privacy-link">Güvenlik ve Gizlilik (Privacy Policy)</a>
+            <a href="privacy.html" class="privacy-link">Gizlilik Politikası (Privacy Policy)</a>
         </div>
     </div>
 
