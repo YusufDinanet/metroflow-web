@@ -27,16 +27,37 @@
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            max-width: 480px;
-            width: 100%;
-            padding: 50px 40px;
-            border-radius: 48px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            max-width: 450px;
+            width: 90%;
+            padding: 60px 40px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
             text-align: center;
             border: 1px solid rgba(255,255,255,0.1);
         }
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(52, 199, 89, 0.15);
+            color: #34C759;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            border: 1px solid rgba(52, 199, 89, 0.3);
+        }
+        .badge-dot {
+            height: 10px;
+            width: 10px;
+            background-color: #34C759;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 0 10px #34C759;
+        }
         h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             margin: 0;
             letter-spacing: -2px;
             font-weight: 800;
@@ -45,53 +66,46 @@
             -webkit-text-fill-color: transparent;
         }
         .subtitle {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
             line-height: 1.6;
-            margin: 15px 0 35px 0;
+            margin: 20px 0 45px 0;
         }
-        
-        .video-wrapper {
-            width: 100%;
-            border-radius: 28px;
-            overflow: hidden;
-            background: #000;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            line-height: 0;
-        }
-        video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
         .app-store-btn {
             display: inline-block;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
+            margin-bottom: 20px;
         }
         .app-store-btn:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
         .app-store-btn img {
-            height: 60px;
+            height: 65px;
+            border-radius: 12px;
         }
-        
         .footer-nav {
-            margin-top: 45px;
+            margin-top: 50px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
+        }
+        .email-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
         }
         .privacy-link {
             font-size: 0.85rem;
             color: var(--text-muted);
             text-decoration: none;
             padding: 10px 20px;
-            border-radius: 12px;
+            border-radius: 14px;
             background: rgba(255, 255, 255, 0.05);
             transition: all 0.2s ease;
+            display: inline-block;
+            align-self: center;
         }
         .privacy-link:hover {
             background: rgba(255, 255, 255, 0.1);
@@ -102,21 +116,19 @@
 <body>
 
     <div class="card">
+        <div class="badge-live">
+            <span class="badge-dot"></span> App Store'da Yayında
+        </div>
+        
         <h1>MetroFlow</h1>
         <p class="subtitle">İstanbul metrosunu cebinizden yönetin. Anlık sefer verileri ve kusursuz rota deneyimi.</p>
-
-        <div class="video-wrapper">
-            <video autoplay loop muted playsinline webkit-playsinline preload="auto">
-                <source src="promo.mp4" type="video/mp4">
-            </video>
-        </div>
 
         <a href="https://apps.apple.com/us/app/metroflow/id6760014955" class="app-store-btn" target="_blank">
             <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/tr-tr?size=250x83" alt="App Store'dan İndirin">
         </a>
 
         <div class="footer-nav">
-            <a href="mailto:destek@metroflow.ist" style="color:var(--primary-color); text-decoration:none; font-weight:500;">destek@metroflow.ist</a>
+            <a href="mailto:destek@metroflow.ist" class="email-link">destek@metroflow.ist</a>
             <a href="privacy.html" class="privacy-link">Gizlilik Politikası (Privacy Policy)</a>
         </div>
     </div>
